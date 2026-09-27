@@ -271,58 +271,6 @@
             text-transform: uppercase;
         }
 
-        .btn-action {
-            display: inline-block;
-            background: var(--primary-sage);
-            color: var(--white);
-            padding: 10px 20px;
-            border-radius: 8px;
-            text-decoration: none;
-            font-size: 0.9rem;
-            font-weight: 500;
-            margin: 5px;
-            transition: var(--transition);
-        }
-
-        .btn-action:hover {
-            background: var(--dark);
-        }
-
-        .inviting-section {
-            background-color: var(--pale-sage);
-        }
-
-        .invitee-list {
-            background: var(--white);
-            padding: 20px;
-            border-radius: 12px;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.03);
-            margin-top: 15px;
-            text-align: left;
-        }
-
-        .invitee-list h4 {
-            color: var(--primary-sage);
-            font-size: 1rem;
-            margin-bottom: 10px;
-            border-bottom: 1px dashed var(--light-sage);
-            padding-bottom: 5px;
-        }
-
-        .invitee-list ul {
-            list-style: none;
-            padding-left: 10px;
-        }
-
-        .invitee-list li {
-            font-size: 0.9rem;
-            margin: 8px 0;
-            color: #444;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-        }
-
         .gallery-section {
             background-color: var(--white);
         }
@@ -519,7 +467,6 @@
         </div>
     </div>
 
-    <!-- Perbaikan jalur file audio & tambahan atribut preload -->
     <audio id="bgMusic" loop preload="auto">
         <source src="musik.mp3" type="audio/mpeg">
         Browser Anda tidak mendukung elemen audio.
@@ -553,7 +500,7 @@
 
         <section class="couple-section" id="couple">
             <h2 class="section-title">Mempelai Bahagia</h2>
-            <p class="section-subtitle">Perpaduan Adat Betawi & Sunda</p>
+            <p class="section-subtitle">Nuansa Adat Betawi & Sunda</p>
 
             <div class="couple-card">
                 <img src="1000059664.jpg" alt="Ulfah" class="couple-img">
@@ -566,7 +513,7 @@
             <div class="couple-card">
                 <img src="1000059662.jpg" alt="Badar" class="couple-img">
                 <h3>Badar</h3>
-                <p><strong>Rd.Badarudin</strong></p>
+                <p><strong>Rd. Badarudin</strong></p>
             </div>
         </section>
 
@@ -596,7 +543,7 @@
             <div class="gallery-grid">
                 <div class="gallery-item">
                     <img src="1000059668.jpg" alt="Foto Galeri 1">
-                    <div class="gallery-caption">"Tumbuh bersama dalam disiplin dan kekuatan."</div>
+                    <div class="gallery-caption">"Tumbuh bersama dalam kehangatan keluarga."</div>
                 </div>
                 <div class="gallery-item">
                     <img src="1000059662.jpg" alt="Foto Galeri 2">
@@ -604,7 +551,7 @@
                 </div>
                 <div class="gallery-item">
                     <img src="1000059710.jpg" alt="Foto Galeri 3">
-                    <div class="gallery-caption">"Siap melaju bersama menuju masa depan."</div>
+                    <div class="gallery-caption">"Siap melangkah bersama menuju masa depan."</div>
                 </div>
             </div>
         </section>
@@ -692,7 +639,7 @@
 
         function updateCountdown() {
             const now = new Date().getTime();
-            const distance = now - weddingDate; // Menghitung durasi setelah acara atau sebaliknya
+            const distance = now - weddingDate;
 
             const days = Math.floor(distance / (1000 * 60 * 60 * 24));
             const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
