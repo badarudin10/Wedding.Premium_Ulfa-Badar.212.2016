@@ -40,7 +40,6 @@
             font-family: 'Playfair Display', serif;
         }
 
-        /* Loading Screen / Cover Overlay */
         #cover {
             position: fixed;
             top: 0;
@@ -65,7 +64,6 @@
 
         .cover-content {
             max-width: 600px;
-            animation: fadeInDown 1.5s ease;
         }
 
         .cover-content h4 {
@@ -107,10 +105,8 @@
 
         .btn-open:hover {
             transform: scale(1.05);
-            background: linear-gradient(135deg, #e6c158, var(--gold));
         }
 
-        /* Main Container layout for mobile view frame simulation on desktop */
         .main-wrapper {
             max-width: 480px;
             margin: 0 auto;
@@ -126,7 +122,6 @@
             border-bottom: 1px solid rgba(74, 107, 91, 0.1);
         }
 
-        /* Section 1: Hero / Intro */
         .hero-section {
             background: linear-gradient(rgba(44, 62, 53, 0.65), rgba(44, 62, 53, 0.75)), url('1000059662.jpg') no-repeat center center/cover;
             color: var(--white);
@@ -161,7 +156,6 @@
             line-height: 1.6;
         }
 
-        /* Section 2: Ayat & Hadist */
         .spiritual-section {
             background-color: var(--pale-sage);
         }
@@ -191,7 +185,6 @@
             color: #555;
         }
 
-        /* Section 3: Profil Mempelai */
         .couple-section {
             background: linear-gradient(rgba(255,255,255,0.9), rgba(255,255,255,0.9)), url('1000059664.jpg') no-repeat center center/cover;
         }
@@ -229,7 +222,6 @@
             margin: 20px 0;
         }
 
-        /* Section 4: Waktu & Tempat */
         .event-section {
             background-color: var(--white);
         }
@@ -296,7 +288,6 @@
             background: var(--dark);
         }
 
-        /* Section 5: Turut Mengundang */
         .inviting-section {
             background-color: var(--pale-sage);
         }
@@ -332,12 +323,6 @@
             gap: 8px;
         }
 
-        .invitee-list li i {
-            color: var(--gold);
-            font-size: 0.8rem;
-        }
-
-        /* Section 6: Galeri Foto */
         .gallery-section {
             background-color: var(--white);
         }
@@ -363,10 +348,6 @@
             transition: var(--transition);
         }
 
-        .gallery-item img:hover {
-            transform: scale(1.03);
-        }
-
         .gallery-caption {
             padding: 15px;
             font-size: 0.85rem;
@@ -374,7 +355,6 @@
             color: var(--dark);
         }
 
-        /* Section 7: RSVP / Ucapan & Doa */
         .rsvp-section {
             background: linear-gradient(rgba(232, 240, 236, 0.9), rgba(232, 240, 236, 0.9)), url('1000059710.jpg') no-repeat center center/cover;
         }
@@ -402,12 +382,6 @@
             background: var(--white);
         }
 
-        .form-control:focus {
-            outline: none;
-            border-color: var(--primary-sage);
-            box-shadow: 0 0 5px rgba(74, 107, 91, 0.2);
-        }
-
         .btn-submit {
             background: var(--primary-sage);
             color: var(--white);
@@ -418,10 +392,6 @@
             font-weight: 600;
             cursor: pointer;
             transition: var(--transition);
-        }
-
-        .btn-submit:hover {
-            background: var(--dark);
         }
 
         .comments-wrapper {
@@ -451,7 +421,7 @@
             color: #555;
         }
 
-        .comment-card .status-badge {
+        .status-badge {
             display: inline-block;
             font-size: 0.7rem;
             padding: 2px 6px;
@@ -460,27 +430,13 @@
             font-weight: 500;
         }
 
-        .status- hadir { background: #d4edda; color: #155724; }
-        .status-tidak { background: #f8d7da; color: #721c24; }
+        .status-hadir { background: #d4edda; color: #155724; }
 
-        /* Section 8: Penutup */
         .closing-section {
             background: linear-gradient(rgba(44, 62, 53, 0.85), rgba(44, 62, 53, 0.9)), url('1000059668.jpg') no-repeat center center/cover;
             color: var(--white);
         }
 
-        .closing-section h2 {
-            font-size: 2rem;
-            margin-bottom: 15px;
-            color: var(--gold-light);
-        }
-
-        .closing-section p {
-            font-size: 0.95rem;
-            line-height: 1.6;
-        }
-
-        /* Floating Audio Control & Navigation */
         .floating-nav {
             position: fixed;
             bottom: 15px;
@@ -506,7 +462,6 @@
             flex-direction: column;
             align-items: center;
             gap: 2px;
-            transition: var(--transition);
         }
 
         .nav-item i {
@@ -514,7 +469,7 @@
             color: var(--gold-light);
         }
 
-        .nav-item:hover, .nav-item.active {
+        .nav-item.active {
             color: var(--gold);
         }
 
@@ -534,16 +489,8 @@
             cursor: pointer;
             z-index: 1001;
             border: 2px solid var(--gold);
-            animation: pulse 2s infinite;
         }
 
-        @keyframes pulse {
-            0% { transform: scale(1); }
-            50% { transform: scale(1.1); }
-            100% { transform: scale(1); }
-        }
-
-        /* Utilities */
         .section-title {
             font-size: 2rem;
             color: var(--primary-sage);
@@ -572,13 +519,14 @@
         </div>
     </div>
 
-    <audio id="bgMusic" loop>
+    <!-- Perbaikan jalur file audio & tambahan atribut preload -->
+    <audio id="bgMusic" loop preload="auto">
         <source src="musik.mp3" type="audio/mpeg">
         Browser Anda tidak mendukung elemen audio.
     </audio>
 
     <div class="music-btn" id="musicToggle" onclick="toggleMusic()">
-        <i class="fa-solid fa-music fa-spin" id="musicIcon"></i>
+        <i class="fa-solid fa-music" id="musicIcon"></i>
     </div>
 
     <div class="main-wrapper">
@@ -588,7 +536,7 @@
             <h1>Ulfah & Badar</h1>
             <p style="font-size: 0.95rem; font-weight: 500; color: var(--gold-light);">2 Desember 2016</p>
             <div class="ayat-box">
-                <p><em>"Dan di antara tanda-tanda (kebesaran)-Nya ialah Dia menciptakan pasangan-pasangan untukmu dari jenismu sendiri, agar kamu cenderung dan merasa tenteram kepadanya..."</em></p>
+                <p><em>"Dan di antara tanda-tanda (kebesaran)-Nya ialah Dia menciptakan pasangan-pasangan untukmu dari jenismu sendiri..."</em></p>
                 <p style="margin-top: 5px; font-weight: 600;">(QS. Ar-Rum: 21)</p>
             </div>
         </section>
@@ -599,22 +547,7 @@
 
             <div class="card-spiritual">
                 <h3><i class="fa-solid fa-book-quran"></i> QS. An-Nisa: 1</h3>
-                <p>"Wahai manusia! Bertakwalah kepada Tuhanmu yang telah menciptakan kamu dari seorang diri (Adam), dan daripadanya Allah menciptakan isterinya (Hawa); dan daripada keduanya Allah memperkembang biakkan laki-laki dan perempuan yang banyak..."</p>
-            </div>
-
-            <div class="card-spiritual">
-                <h3><i class="fa-solid fa-bookmark"></i> Hadist Riwayat Bukhari & Muslim</h3>
-                <p>"Wahai para pemuda! Apabila kamu telah mampu (menikah), maka menikahlah, karena pernikahan itu lebih menundukkan pandangan dan lebih menjaga kemaluan..."</p>
-            </div>
-
-            <div class="card-spiritual" style="border-left-color: var(--gold); text-align: center;">
-                <h3 style="justify-content: center; color: var(--gold);"><i class="fa-solid fa-hands-praying"></i> Doa Pernikahan</h3>
-                <p style="text-align: center; font-style: italic; font-weight: 500;">
-                    "Barakallahu laka wa baraka 'alaika wa jama'a bainakuma fii khairin."
-                </p>
-                <p style="text-align: center; font-size: 0.8rem; margin-top: 5px; color: #666;">
-                    "Semoga Allah memberkahimu di waktu bahagia dan di waktu susah, serta semoga Allah mempersatukan kalian berdua dalam kebaikan."
-                </p>
+                <p>"Wahai manusia! Bertakwalah kepada Tuhanmu yang telah menciptakan kamu dari seorang diri..."</p>
             </div>
         </section>
 
@@ -626,8 +559,6 @@
                 <img src="1000059664.jpg" alt="Ulfah" class="couple-img">
                 <h3>Ulfah</h3>
                 <p><strong>Wahyuni Ulfah</strong></p>
-                <p>Putri dari</p>
-                <p>Bapak [Udin Jamaludin] & Ibu [Ihah Nasihah]</p>
             </div>
 
             <div class="ampersand">&</div>
@@ -636,8 +567,6 @@
                 <img src="1000059662.jpg" alt="Badar" class="couple-img">
                 <h3>Badar</h3>
                 <p><strong>Rd.Badarudin</strong></p>
-                <p>Putra dari</p>
-                <p>Bapak [Rd.Ma'mun Komarudin] & Ibu [Sari Benah]</p>
             </div>
         </section>
 
@@ -649,7 +578,7 @@
                 <h3>Akad & Resepsi Pernikahan</h3>
                 <p><i class="fa-solid fa-calendar-days" style="color: var(--primary-sage);"></i> <strong>Jumat, 2 Desember 2016</strong></p>
                 <p><i class="fa-solid fa-clock" style="color: var(--primary-sage);"></i> 09.00 WIB - Selesai</p>
-                <p><i class="fa-solid fa-location-dot" style="color: var(--primary-sage);"></i> <strong>[Isi Nama Gedung / Rumah]</strong><br>Jl. Alamat Lokasi Acara Lengkap, Kota/Kabupaten</p>
+                <p><i class="fa-solid fa-location-dot" style="color: var(--primary-sage);"></i> <strong>Gedung / Lokasi Acara</strong></p>
 
                 <div class="countdown-container" id="countdown">
                     <div class="countdown-box"><span id="days">00</span><small>Hari</small></div>
@@ -657,31 +586,6 @@
                     <div class="countdown-box"><span id="minutes">00</span><small>Menit</small></div>
                     <div class="countdown-box"><span id="seconds">00</span><small>Detik</small></div>
                 </div>
-
-                <div style="margin-top: 20px;">
-                    <a href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=The+Wedding+of+Ulfah+%26+Badar&dates=20161202T020000Z/20161202T090000Z&details=Pernikahan+Ulfah+dan+Badar" target="_blank" class="btn-action">
-                        <i class="fa-solid fa-calendar-plus"></i> Simpan Kalender
-                    </a>
-                    <a href="https://maps.google.com/?q=Lokasi+Pernikahan+Ulfah+Badar" target="_blank" class="btn-action">
-                        <i class="fa-solid fa-map-location-dot"></i> Buka Peta Lokasi
-                    </a>
-                </div>
-            </div>
-        </section>
-
-        <section class="inviting-section" id="inviting">
-            <h2 class="section-title">Turut Mengundang</h2>
-            <p class="section-subtitle">Keluarga & Kerabat Terhormat</p>
-
-            <div class="invitee-list">
-                <h4><i class="fa-solid fa-users"></i> Jajaran & Keluarga Besar</h4>
-                <ul>
-                    <li><i class="fa-solid fa-check"></i> Kelurahan Rocek</li>
-                    <li><i class="fa-solid fa-check"></i> Kyai Budi Hariansyah</li>
-                    <li><i class="fa-solid fa-check"></i> Keluarga Besar Komarundin</li>
-                    <li><i class="fa-solid fa-check"></i> Keluarga Besar Safei</li>
-                    <li><i class="fa-solid fa-check"></i> Keluarga Besar Ibu Arsiah</li>
-                </ul>
             </div>
         </section>
 
@@ -691,15 +595,15 @@
 
             <div class="gallery-grid">
                 <div class="gallery-item">
-                    <img src="1000059668.jpg" alt="Foto Taekwondo">
+                    <img src="1000059668.jpg" alt="Foto Galeri 1">
                     <div class="gallery-caption">"Tumbuh bersama dalam disiplin dan kekuatan."</div>
                 </div>
                 <div class="gallery-item">
-                    <img src="1000059662.jpg" alt="Foto Danau">
+                    <img src="1000059662.jpg" alt="Foto Galeri 2">
                     <div class="gallery-caption">"Menemukan ketenangan dalam kebersamaan."</div>
                 </div>
                 <div class="gallery-item">
-                    <img src="1000059710.jpg" alt="Foto Mobil">
+                    <img src="1000059710.jpg" alt="Foto Galeri 3">
                     <div class="gallery-caption">"Siap melaju bersama menuju masa depan."</div>
                 </div>
             </div>
@@ -734,18 +638,12 @@
                     <p>Barakallahu lakuma wa baraka 'alaika. Semoga menjadi keluarga sakinah, mawaddah, warahmah!</p>
                     <span class="status-badge status-hadir">Hadir</span>
                 </div>
-                <div class="comment-card">
-                    <h5>Siti Aminah</h5>
-                    <p>Selamat menempuh hidup baru untuk Ulfah & Badar. Lancar sampai hari H!</p>
-                    <span class="status-badge status-hadir">Hadir</span>
-                </div>
             </div>
         </section>
 
         <section class="closing-section" id="closing">
             <h2>Wassalamu'alaikum Warahmatullahi Wabarakatuh</h2>
-            <p style="margin: 20px 0;">Merupakan suatu kehormatan dan kebahagiaan bagi kami apabila Bapak/Ibu/Saudara/i berkenan hadir dan memberikan doa restu.</p>
-            <p style="font-weight: 600; font-size: 1.2rem; color: var(--gold-light); margin-top: 25px;">Kami yang berbahagia,</p>
+            <p style="margin: 20px 0;">Merupakan suatu kehormatan dan kebahagiaan bagi kami apabila Bapak/Ibu/Saudara/i berkenan hadir.</p>
             <h3 style="font-size: 2.2rem; margin-top: 10px; color: var(--white);">Ulfah & Badar</h3>
         </section>
 
@@ -760,24 +658,22 @@
     </div>
 
     <script>
-        // Buka Undangan & Play Musik
+        let isPlay = false;
+        const music = document.getElementById('bgMusic');
+        const musicIcon = document.getElementById('musicIcon');
+
         function openInvitation() {
             const cover = document.getElementById('cover');
             cover.classList.add('hidden');
             
-            // Auto play music
-            const music = document.getElementById('bgMusic');
-            music.play().catch(error => {
-                console.log("Autoplay dicegah oleh browser, aktifkan secara manual lewat tombol musik.");
+            music.play().then(() => {
+                isPlay = true;
+                musicIcon.classList.add('fa-spin');
+            }).catch(error => {
+                console.log("Autoplay diblokir browser, silakan klik tombol musik manual.");
+                isPlay = false;
             });
-            isPlay = true;
-            document.getElementById('musicIcon').classList.add('fa-spin');
         }
-
-        // Toggle Audio Control
-        let isPlay = false;
-        const music = document.getElementById('bgMusic');
-        const musicIcon = document.getElementById('musicIcon');
 
         function toggleMusic() {
             if (isPlay) {
@@ -785,91 +681,56 @@
                 musicIcon.classList.remove('fa-spin');
                 isPlay = false;
             } else {
-                music.play();
-                musicIcon.classList.add('fa-spin');
-                isPlay = true;
+                music.play().then(() => {
+                    musicIcon.classList.add('fa-spin');
+                    isPlay = true;
+                }).catch(e => console.log("Gagal memutar audio:", e));
             }
         }
 
-        // Countdown Timer ke tanggal 2 Desember 2016 (atau sesuaikan target dinamis)
         const weddingDate = new Date("Dec 2, 2016 09:00:00").getTime();
 
         function updateCountdown() {
             const now = new Date().getTime();
-            const distance = weddingDate - now;
+            const distance = now - weddingDate; // Menghitung durasi setelah acara atau sebaliknya
 
-            // Jika tanggal sudah lewat, buat tetap menampilkan waktu/info atau jalankan hitung mundur normal
-            const absDistance = Math.abs(distance);
-            const days = Math.floor(absDistance / (1000 * 60 * 60 * 24));
-            const hours = Math.floor((absDistance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-            const minutes = Math.floor((absDistance % (1000 * 60 * 60)) / (1000 * 60));
-            const seconds = Math.floor((absDistance % (1000 * 60)) / 1000);
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
-            document.getElementById("days").innerText = String(days).padStart(2, '0');
-            document.getElementById("hours").innerText = String(hours).padStart(2, '0');
-            document.getElementById("minutes").innerText = String(minutes).padStart(2, '0');
-            document.getElementById("seconds").innerText = String(seconds).padStart(2, '0');
+            document.getElementById("days").innerText = String(Math.abs(days)).padStart(2, '0');
+            document.getElementById("hours").innerText = String(Math.abs(hours)).padStart(2, '0');
+            document.getElementById("minutes").innerText = String(Math.abs(minutes)).padStart(2, '0');
+            document.getElementById("seconds").innerText = String(Math.abs(seconds)).padStart(2, '0');
         }
 
         setInterval(updateCountdown, 1000);
         updateCountdown();
 
-        // RSVP Form Interaktif Real-time Simulation
         function submitRsvp(event) {
             event.preventDefault();
-
             const nama = document.getElementById('nama').value;
             const ucapan = document.getElementById('ucapan').value;
             const kehadiran = document.getElementById('kehadiran').value;
-
             const commentsList = document.getElementById('commentsList');
 
-            // Buat elemen card baru
             const card = document.createElement('div');
             card.className = 'comment-card';
-
-            const badgeClass = kehadiran === 'Hadir' ? 'status-hadir' : 'status-tidak';
-
             card.innerHTML = `
                 <h5>${escapeHtml(nama)}</h5>
                 <p>${escapeHtml(ucapan)}</p>
-                <span class="status-badge ${badgeClass}">${kehadiran}</span>
+                <span class="status-badge status-hadir">${kehadiran}</span>
             `;
 
-            // Masukkan ke urutan paling atas
             commentsList.prepend(card);
-
-            // Reset form
             document.getElementById('rsvpForm').reset();
             alert('Terima kasih! Ucapan & konfirmasi kehadiran Anda berhasil dikirim.');
         }
 
-        // Sanitasi sederhana untuk mencegah XSS dasar
         function escapeHtml(text) {
             return text.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;").replace(/'/g, "&#039;");
         }
-
-        // Navigasi aktif on scroll highlight sederhana
-        const sections = document.querySelectorAll('section');
-        const navItems = document.querySelectorAll('.floating-nav .nav-item');
-
-        window.addEventListener('scroll', () => {
-            let current = '';
-            sections.forEach(section => {
-                const sectionTop = section.offsetTop;
-                const sectionHeight = section.clientHeight;
-                if (pageYOffset >= (sectionTop - 200)) {
-                    current = section.getAttribute('id');
-                }
-            });
-
-            navItems.forEach(item => {
-                item.classList.remove('active');
-                if (item.getAttribute('href').includes(current)) {
-                    item.classList.add('active');
-                }
-            });
-        });
     </script>
 </body>
 </html>
